@@ -1,0 +1,34 @@
+{
+  "$schema": "https://platformatic.dev/schemas/v1.23.0/composer",
+  "composer": {
+    "services": [
+      {
+        "id": "example",
+        "origin": "http://0.0.0.0:3042",
+        "openapi": {
+          "url": "/documentation/json",
+          "prefix": "foobar"
+        }
+      }
+    ],
+    "refreshTimeout": 1000
+  },
+  "watch": true,
+  "plugins": {
+    "paths": [
+      {
+        "path": "./plugins",
+        "encapsulate": false
+      },
+      "./routes"
+    ],
+    "typescript": false
+  },
+  "server": {
+    "hostname": "0.0.0.0",
+    "port": 3043,
+    "logger": {
+      "level": "info"
+    }
+  }
+}
